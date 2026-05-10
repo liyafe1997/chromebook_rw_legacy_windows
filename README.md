@@ -18,6 +18,8 @@ The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/
 | ✅GPU                | ✅Just works by installing driver |
 | ☑️Bluetooth          | ✅Disable power management        |
 | ☑️Audio              | ✅By Coolstar's driver            |
+| ⚠️Sleep              | ⚠️Partially                       |
+| ✅Hibernate          | ✅Works                           |
 
 ## 1. Boot
 If your device also able to boot into the install media/WinPE/Safe Mode in RW_LEGACY, that is a good signal, means at least, the minimal/basic Windows is happy with that.
@@ -36,9 +38,13 @@ After the Windows installation, you can boot into the install media/WinPE, open 
 "Start"=dword:00000000
 ```
 
-Then you will be able to boot into Windows/continue the installation in normal mode. 
+Then you will be able to boot into Windows/continue the installation in normal mode. If still not, you have to figure out what is the blocker.
 
-If still not, you have to figure out what is the blocker.
+Once you are able to boot into Windows & the installation is finished. Go to `Device Manager`
+
+<img width="1265" height="556" alt="image" src="https://github.com/user-attachments/assets/6e4543d0-64bd-436c-9769-a20f5c88f5e8" />
+
+Switch the `Intel(R) Power Engine Plug-in` with warning symbol to `Standard Power Management Controller` driver. Otherwise the `intelpep` might be re-enabled automatically by Windows/driver updates.
 
 ## 2. Battery Indicator/Charging status
 According to Microsoft's [ACPI implementation requirements](https://learn.microsoft.com/en-us/windows-hardware/design/component-guidelines/acpi-firmware-implementation-requirements), Windows only happy with `Power Unit = 0 (mW/mWh)`, but the stock Chromebook coreboot firmware's ACPI is reporting `Power Unit = 1 (mA/mAh)`. That is the reason why Windows does not display the battery indicator and level.
@@ -76,3 +82,10 @@ Tick `Show hidden devices` in Device Manager.
 And check if you have `ACPI\10EC5650` under `Other devices`.
 
 If you found it and it lack of driver, try this [rt5650.zip](https://github.com/liyafe1997/chromebook_rw_legacy_windows/raw/refs/heads/master/rt5650.zip)
+
+## 6. Sleep / Hibernate
+In Windows it looks like support `s0ix`, but mostly only software, which means Windows can enter `s0ix` mode, it may limits some background activities, disconnect WIFI (if you set `Disconnected Standby`), but due to the lack of ACPI and `intelpep` driver, it can not really put the whole platform into a really low power status, so the power consumption can be higher than expected.
+
+Basically, you can use the `Sleep` feature as a advanced `Screen Off` feature for temporary away. 
+
+The good thing is `Hibernate` is working! So if you really need a low power status for a long-term away, you can use `Hibernate`.
