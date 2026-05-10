@@ -61,7 +61,9 @@ For OpenCore, check: https://github.com/acidanthera/OpenCorePkg/releases/
 These patches and config are tested on [OpenCore 1.0.7](https://github.com/acidanthera/OpenCorePkg/releases/tag/1.0.7). You can also just use the binary in this repo.
 
 ## 4. Keyboard backlight adjustment.
-You can try [Coolstar's EC & Keyboard driver](https://coolstar.org/chromebook/) first, if it doesn't work, try my keyboard brightness driver & userland program.
+You can try [Coolstar's EC & Keyboard driver](https://coolstar.org/chromebook/) first.
+
+If it doesn't work, try my keyboard brightness driver & userland program. Check: https://github.com/liyafe1997/chromebook-windows-keyboard-backlight 
 
 ## 5. Audio
 Coolstar's driver works on my machine. If you don't want to pay, check https://github.com/akibaGumi/akibaPatcher
