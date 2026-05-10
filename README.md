@@ -70,7 +70,7 @@ Coolstar's driver works on my machine. If you don't want to pay, check https://g
 
 If you found your speaker works but crappy, you may have a `rt5650` codec but lack of driver.
 
-Tick `Show hidden devices`
+Tick `Show hidden devices` in Device Manager.
 <img width="278" height="327" alt="{B8E96425-D9AB-4FAA-9959-4022B8FE3472}" src="https://github.com/user-attachments/assets/b54feb58-adf1-4674-9cef-18e3d2653af2" />
 
 And check if you have `ACPI\10EC5650` under `Other devices`.
