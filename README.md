@@ -14,6 +14,7 @@ The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/
 | ☑️Battery indicator  | ⚠️By patching ACPI                |
 | ☑️Screen backlight   | ⚠️By patching ACPI                |
 | ☑️Keyboard backlight | ⚠️By custom drievr                |
+| ✅Touchpad           | ⚠️Maunally select I2C HID Driver  |
 | ✅WIFI               | ✅Just works by installing driver |
 | ✅GPU                | ✅Just works by installing driver |
 | ☑️Bluetooth          | ✅Disable power management        |
@@ -103,7 +104,12 @@ Basically, you can use the `Sleep` feature as a advanced `Screen Off` feature fo
 
 The good thing is `Hibernate` is working! So if you really need a low power status for a long-term away, you can use `Hibernate`.
 
-## 8. Automatically boot into RW_LEGACY / Alternate Bootloader
+## 8. Touchpad
+For my Acer cb514 (`roric`) Chromebook, DO NOT install the Coolstar's Synaptic driver, since it is a Synaptic touchpad but it is a standard Windows friendly `I2C HID` device which is NOT compatible with Coolstar's driver, and it will freeze the system for a couple of minutes.
+
+If you have installed Coolstar's Synaptic driver and it won't work, simply uninstall it, once you have the chipset driver installed, the `ACPI\SYNA0000` touchpad device comes out, it will attach the `I2C HID` driver and works.
+
+## 9. Automatically boot into RW_LEGACY / Alternate Bootloader
 It is possible without unlocking WP or set GBB flags!
 
 Simply do 
