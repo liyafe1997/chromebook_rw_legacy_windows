@@ -8,8 +8,8 @@ Note: If you are on a AMD Zen2 based chromebook, you can also check this Coolsta
 
 The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/Alder Lake-N/Twin Lake), since I only have this. For similar platforms it might behave similar, you can use the similar idea and have a try.
 
-| Feature             | Remark                           |
-| ------------------- | -------------------------------- |
+| Feature              | Remark                             |
+| -------------------- | ---------------------------------- |
 | ☑️Boot               | ⚠️By disabling `intelpep`         |
 | ☑️Battery indicator  | ⚠️By patching ACPI                |
 | ☑️Screen backlight   | ⚠️By patching ACPI                |
@@ -20,6 +20,7 @@ The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/
 | ☑️Audio              | ✅By Coolstar's driver            |
 | ⚠️Sleep              | ⚠️Partially                       |
 | ✅Hibernate          | ✅Works                           |
+| ✅Auto boot Windows  | ✅Yes!                            |
 
 ## 1. Boot
 If your device also able to boot into the install media/WinPE/Safe Mode in RW_LEGACY, that is a good signal, means at least, the minimal/basic Windows is happy with that.
@@ -102,7 +103,7 @@ Basically, you can use the `Sleep` feature as a advanced `Screen Off` feature fo
 
 The good thing is `Hibernate` is working! So if you really need a low power status for a long-term away, you can use `Hibernate`.
 
-## 8. Automatically boot in to RW_LEGACY 
+## 8. Automatically boot into RW_LEGACY / Alternate Bootloader
 It is possible without unlocking WP or set GBB flags!
 
 Simply do 
