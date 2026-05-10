@@ -36,7 +36,7 @@ After the Windows installation, you can boot into the install media/WinPE, open 
 
 ```
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\intelpep]
-"Start"=dword:00000000
+"Start"=dword:00000004
 ```
 
 Then you will be able to boot into Windows/continue the installation in normal mode. If still not, you have to figure out what is the blocker.
