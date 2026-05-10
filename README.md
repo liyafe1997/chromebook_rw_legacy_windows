@@ -14,7 +14,7 @@ The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/
 | ☑️Battery indicator  | ⚠️By patching ACPI                |
 | ☑️Screen backlight   | ⚠️By patching ACPI                |
 | ☑️Keyboard backlight | ⚠️By custom drievr                |
-| ✅Touchpad           | ⚠️Maunally select I2C HID Driver  |
+| ✅Touchpad           | ✅Just works with I2C HID driver  |
 | ✅WIFI               | ✅Just works by installing driver |
 | ✅GPU                | ✅Just works by installing driver |
 | ☑️Bluetooth          | ✅Disable power management        |
