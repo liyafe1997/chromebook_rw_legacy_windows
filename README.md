@@ -83,9 +83,41 @@ And check if you have `ACPI\10EC5650` under `Other devices`.
 
 If you found it and it lack of driver, try this [rt5650.zip](https://github.com/liyafe1997/chromebook_rw_legacy_windows/raw/refs/heads/master/rt5650.zip)
 
-## 6. Sleep / Hibernate
+## 6. Bluetooth
+On my machine, once the `Intel Bluetooth` driver loaded, it would always jumping/toggling appear/disapper. If you also have this problem, untick this `Allow the computer to turn off this device to save power`.
+
+<img width="490" height="585" alt="image" src="https://github.com/user-attachments/assets/121470f1-3b4a-4a77-b2a8-de8a53161115" />
+
+If you feel hard to do that(you need to do it quickly, you have to save the setting within the time window of the device appeared), you can also try:
+```
+powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_USB USBSELECTIVE SUSPEND 0
+powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_USB USBSELECTIVE SUSPEND 0
+powercfg /SETACTIVE SCHEME_CURRENT
+```
+
+## 7. Sleep / Hibernate
 In Windows it looks like support `s0ix`, but mostly only software, which means Windows can enter `s0ix` mode, it may limits some background activities, disconnect WIFI (if you set `Disconnected Standby`), but due to the lack of ACPI and `intelpep` driver, it can not really put the whole platform into a really low power status, so the power consumption can be higher than expected.
 
 Basically, you can use the `Sleep` feature as a advanced `Screen Off` feature for temporary away. 
 
 The good thing is `Hibernate` is working! So if you really need a low power status for a long-term away, you can use `Hibernate`.
+
+## 8. Automatically boot in to RW_LEGACY 
+It is possible without unlocking WP or set GBB flags!
+
+Simply do 
+```bash
+sudo crossystem dev_default_boot=altfw
+# or 
+sudo crossystem dev_default_boot=legacy # could be for old platform.
+```
+In ChromeOS.
+
+You can also run `sudo crossystem` check it has been set or not.
+
+It can not remove the developer screen, but it can make the cursor choose `Select alternate bootloader` by default and automatically boot it after 1 minute timeout.
+This is really helpful if you are working on a remote `RW_LEGACY` Chromebook and you reboot it remotely, it can automatically boot into the `RW_LEGACY` firmware/payload.
+
+Note: looks like the `crossystem` set things only works in ChromeOS(I tested on Ubuntu, it only able to read but refuse to write), so better to do that before you have erased the ChromeOS. 
+
+If you have already erased ChromeOS and don't want to restore it just for this simple thing (because restoring ChromeOS will erase your whole disk), you can try [FydeOS USB LiveCD](https://fydeos.io/download/), which is another ChromiumOS based project. I tested `crossystem` works in `FydeOS 22.1` on my Chromebook.
