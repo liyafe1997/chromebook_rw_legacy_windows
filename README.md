@@ -20,7 +20,7 @@ The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/
 | ☑️Audio              | ✅By Coolstar's driver            |
 | ⚠️Sleep              | ⚠️Partially                       |
 | ✅Hibernate          | ✅Works                           |
-| ✅Auto boot Windows  | ✅Yes!                            |
+| ✅Auto boot Windows  | ✅Possible!                       |
 
 ## 1. Boot
 If your device also able to boot into the install media/WinPE/Safe Mode in RW_LEGACY, that is a good signal, means at least, the minimal/basic Windows is happy with that.
