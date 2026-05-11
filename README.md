@@ -6,7 +6,7 @@ Note: If you are on a AMD Zen2 based chromebook, you can also check this Coolsta
 
 ## What works / doesn't work
 
-The whole thing I was working on my Acer Chromebook Plus 512 (roric, Intel N355/Alder Lake-N/Twin Lake), since I only have this. For similar platforms it might behave similar, you can use the similar idea and have a try.
+The whole thing I was working on my Acer Chromebook Plus 514 (roric, Intel N355/Alder Lake-N/Twin Lake), since I only have this. For similar platforms it might behave similar, you can use the similar idea and have a try.
 
 | Feature              | Remark                             |
 | -------------------- | ---------------------------------- |
